@@ -17,6 +17,12 @@ The code of [face.evoLVe](#Introduction) is released under the MIT License.
 ****
 ## News
 
+:triangular_flag_on_post: **`OPEN 04 July 2019`**: We will share several publicly available datasets on face anti-spoofing/liveness detection to facilitate related research and analytics.
+
+:white_check_mark: **`CLOSED 07 June 2019`**: ~~We are training a better-performing [IR-152](https://arxiv.org/pdf/1512.03385.pdf) model on [MS-Celeb-1M_Align_112x112](https://arxiv.org/pdf/1607.08221.pdf), and will release the model soon.~~
+
+:white_check_mark: **`CLOSED 23 May 2019`**: ~~We share three publicly available datasets to facilitate research on heterogeneous face recognition and analytics. Please refer to Sec. [Data Zoo](#Data-Zoo) for details.~~
+
 :white_check_mark: **`CLOSED 23 Jan 2019`**: ~~We share the name lists and pair-wise overlapping lists of several widely-used face recognition datasets to help researchers/engineers quickly remove the overlapping parts between their own private datasets and the public datasets. Please refer to Sec. [Data Zoo](#Data-Zoo) for details.~~
 
 :white_check_mark: **`CLOSED 23 Jan 2019`**: ~~The current distributed training schema with multi-GPUs under PyTorch and other mainstream platforms parallels the backbone across multi-GPUs while relying on a single master to compute the final bottleneck (fully-connected/softmax) layer. This is not an issue for conventional face recognition with moderate number of identities. However, it struggles with large-scale face recognition, which requires recognizing millions of identities in the real world. The master can hardly hold the oversized final layer while the slaves still have redundant computation resource, leading to small-batch training or even failed training. To address this problem, we are developing a highly-elegant, effective and efficient distributed training schema with multi-GPUs under PyTorch, supporting not only the backbone, but also the head with the fully-connected (softmax) layer, to facilitate high-performance large-scale face recognition. We will added this support into our repo.~~
@@ -61,9 +67,9 @@ The code of [face.evoLVe](#Introduction) is released under the MIT License.
 * Linux or macOS
 * [Python 3.7](https://repo.continuum.io/archive/Anaconda3-2018.12-Linux-x86_64.sh) (for training \& validation) and [Python 2.7](https://repo.continuum.io/archive/Anaconda2-2018.12-Linux-x86_64.sh) (for visualization w/ tensorboardX)
 * PyTorch 1.0 (for traininig \& validation, install w/ `pip install torch torchvision`)
-* MXNet 1.3.1 (optinal, for data processing, install w/ `pip install mxnet-cu90`)
-* TensorFlow 1.12 (optinal, for visualization, install w/ `pip install tensorflow-gpu`)
-* tensorboardX 1.6 (optinal, for visualization, install w/ `pip install tensorboardX`)
+* MXNet 1.3.1 (optional, for data processing, install w/ `pip install mxnet-cu90`)
+* TensorFlow 1.12 (optional, for visualization, install w/ `pip install tensorflow-gpu`)
+* tensorboardX 1.6 (optional, for visualization, install w/ `pip install tensorboardX`)
 * OpenCV 3.4.5 (install w/ `pip install opencv-python`)
 * bcolz 1.2.0 (install w/ `pip install bcolz`)
 
@@ -521,6 +527,14 @@ While not required, for optimal performance it is **highly** recommended to run 
 |[YTF](http://www.cs.tau.ac.il/~wolf/ytfaces/WolfHassnerMaoz_CVPR11.pdf)|Align_344x344|1,595|-|3,425|621,127|[Google Drive](https://drive.google.com/file/d/1o_5b7rYcSEFvTmwmEh0eCPsU5kFmKN_Y/view?usp=sharing), [Baidu Drive](https://pan.baidu.com/s/1M43AcijgGrurb0dfFVlDKQ)|
 |[DeepGlint](http://trillionpairs.deepglint.com)|Align_112x112|180,855|6,753,545|-|-|[Google Drive](https://drive.google.com/file/d/1Lqvh24913uquWxa3YS_APluEmbNKQ4Us/view?usp=sharing)|
 |[UTKFace](https://susanqq.github.io/UTKFace/)|Align_200x200|-|23,708|-|-|[Google Drive](https://drive.google.com/file/d/1T5KH-DWXu048im0xBuRK0WEi820T28B-/view?usp=sharing), [Baidu Drive](https://pan.baidu.com/s/12Qp5pdZvitqBYSJHm4ouOw)|
+|[BUAA-VisNir](http://irip.buaa.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=1240132834&wbfileid=1277824)|Align_287x287|150|5,952|-|-|[Baidu Drive](https://pan.baidu.com/s/1MWiqNhHQmSKHmWY7oLsFbw), PW: vt68|
+|[CASIA NIR-VIS 2.0](https://www.cv-foundation.org/openaccess/content_cvpr_workshops_2013/W13/papers/Li_The_CASIA_NIR-VIS_2013_CVPR_paper.pdf)|Align_128x128|725|17,580|-|-|[Baidu Drive](https://pan.baidu.com/s/1fNJT8_UE4ZwTWAOxPT7h8Q), PW: 7qy6|
+|[Oulu-CASIA](http://www.ee.oulu.fi/~gyzhao/Download/Databases/NIR_VL_FED/Description.pdf)|Raw|80|65,000|-|-|[Baidu Drive](https://pan.baidu.com/s/1qmNVAkQ_nHFnkGbFcRw1zQ), PW: qc9i|
+|[NUAA-ImposterDB](http://parnec.nuaa.edu.cn/xtan/paper/eccv10r1.pdf)|Raw|15|12,614|-|-|[Baidu Drive](https://pan.baidu.com/s/1dGaMpBzwRiJYvFapmWOUkw), PW: tqfh|
+|[CASIA-SURF](https://arxiv.org/pdf/1812.00408.pdf)|Raw|1,000|-|-|21,000|[Baidu Drive](https://pan.baidu.com/s/1ZQVS-DBLqrGKQTd_JQ0lXg), PW: j41h|
+|[CASIA-FASD](http://www.cbsr.ia.ac.cn/users/zlei/papers/ICB2012/ZHANG-ICB2012.pdf)|Raw|50|-|-|600|[Baidu Drive](https://pan.baidu.com/s/1tGCCKNmSEG8yIZE6_FFDew), PW: zx7k|
+|[CASIA-MFSD](http://biometrics.cse.msu.edu/Publications/Databases/MSUMobileFaceSpoofing/index.htm)|Raw|50|-|-|600| |
+|[Replay-Attack](https://publications.idiap.ch/downloads/papers/2012/Chingovska_IEEEBIOSIG2012_2012.pdf)|Raw|50|-|-|1,200| |
 * Remark: unzip [CASIA-WebFace](https://arxiv.org/pdf/1411.7923.pdf) clean version with 
   ```
   unzip casia-maxpy-clean.zip    
@@ -587,6 +601,26 @@ While not required, for optimal performance it is **highly** recommended to run 
     ```
 
   * Performance (please perform evaluation on your own Asia face benchmark dataset)
+  
+* Model
+
+  |Backbone|Head|Loss|Training Data|Download Link|
+  |:---:|:---:|:---:|:---:|:---:|
+  |[IR-152](https://arxiv.org/pdf/1512.03385.pdf)|[ArcFace](https://arxiv.org/pdf/1801.07698.pdf)|[Focal](https://arxiv.org/pdf/1708.02002.pdf)|[MS-Celeb-1M_Align_112x112](https://arxiv.org/pdf/1607.08221.pdf)|[Baidu Drive](https://pan.baidu.com/s/19c2_qdGeLo3CEiSSQztUeA), PW: y6ya|
+
+  * Setting
+    ```
+    INPUT_SIZE: [112, 112]; RGB_MEAN: [0.5, 0.5, 0.5]; RGB_STD: [0.5, 0.5, 0.5]; BATCH_SIZE: 256 (drop the last batch to ensure consistent batch_norm statistics); Initial LR: 0.01; NUM_EPOCH: 120; WEIGHT_DECAY: 5e-4 (do not apply to batch_norm parameters); MOMENTUM: 0.9; STAGES: [30, 60, 90]; Augmentation: Random Crop + Horizontal Flip; Imbalanced Data Processing: Weighted Random Sampling; Solver: SGD; GPUs: 4 NVIDIA Geforce RTX 2080 Ti in Parallel
+    ```
+  * Training \& validation statistics
+  
+    <img src="https://github.com/ZhaoJ9014/face.evoLVe.PyTorch/blob/master/disp/Fig14.png" width="1000px"/>
+      
+  * Performance
+
+    |[LFW](https://hal.inria.fr/file/index/docid/321923/filename/Huang_long_eccv2008-lfw.pdf)|[CFP_FF](http://www.cfpw.io/paper.pdf)|[CFP_FP](http://www.cfpw.io/paper.pdf)|[AgeDB](http://openaccess.thecvf.com/content_cvpr_2017_workshops/w33/papers/Moschoglou_AgeDB_The_First_CVPR_2017_paper.pdf)|[CALFW](https://arxiv.org/pdf/1708.08197.pdf)|[CPLFW](http://www.whdeng.cn/CPLFW/Cross-Pose-LFW.pdf)|[Vggface2_FP](https://arxiv.org/pdf/1710.08092.pdf)|
+    |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+    |99.82|99.83|98.37|98.07|96.03|93.05|95.50|
 
 ****
 ### Achievement 
@@ -613,7 +647,7 @@ While not required, for optimal performance it is **highly** recommended to run 
 
 * This repo is inspired by [InsightFace.MXNet](https://github.com/deepinsight/insightface), [InsightFace.PyTorch](https://github.com/TreB1eN/InsightFace_Pytorch), [ArcFace.PyTorch](https://github.com/ronghuaiyang/arcface-pytorch), [MTCNN.MXNet](https://github.com/pangyupo/mxnet_mtcnn_face_detection) and [PretrainedModels.PyTorch](https://github.com/Cadene/pretrained-models.pytorch).
 * The work of Jian Zhao was partially supported by China Scholarship Council (CSC) grant 201503170248.
-* We would like to thank [Prof. Jiashi Feng](https://sites.google.com/site/jshfeng/), [Dr. Jianshu Li](https://sites.google.com/view/li-js), Mr. Yu Cheng (Learning and Vision group, National University of Singapore), Mr. Yuan Xin, Mr. Di Wu, Mr. Zhenyuan Shen, Mr. Jianwei Liu (Tencent FiT DeepSea AI Lab, China), [Prof. Ran He](http://www.nlpr.ia.ac.cn/english/irds/People/rhe.html), [Prof. Junliang Xing](http://people.ucas.ac.cn/~0051452?language=en), [Mr. Xiang Wu](http://alfredxiangwu.github.io/) (Institute of Automation, Chinese Academy of Sciences), [Prof. Guosheng Hu](https://www.linkedin.com/in/guosheng-hu-6801b333/) (AnyVision Inc., U.K.), [Dr. Lin Xiong](https://bruinxiong.github.io/xionglin.github.io/) (JD Digits AI Lab, U.S.), Miss Yi Cheng (Panasonic R\&D Center, Singapore) for helpful discussions.
+* We would like to thank [Prof. Jiashi Feng](https://sites.google.com/site/jshfeng/), [Dr. Jianshu Li](https://sites.google.com/view/li-js), Mr. Yu Cheng (Learning and Vision group, National University of Singapore), Mr. Yuan Xin, Mr. Di Wu, Mr. Zhenyuan Shen, Mr. Jianwei Liu (Tencent FiT DeepSea AI Lab, China), [Prof. Ran He](http://www.nlpr.ia.ac.cn/english/irds/People/rhe.html), [Prof. Junliang Xing](http://people.ucas.ac.cn/~0051452?language=en), [Mr. Xiang Wu](http://alfredxiangwu.github.io/) (Institute of Automation, Chinese Academy of Sciences), [Prof. Guosheng Hu](https://www.linkedin.com/in/guosheng-hu-6801b333/) (AnyVision Inc., U.K.), [Dr. Lin Xiong](https://bruinxiong.github.io/xionglin.github.io/) (JD Digits, U.S.), Miss Yi Cheng (Panasonic R\&D Center, Singapore) for helpful discussions.
 
 ****
 ### Citation 
@@ -621,11 +655,34 @@ While not required, for optimal performance it is **highly** recommended to run 
 
 - Please consult and consider citing the following papers:
 
+      @inproceedings{zhao2019multi,
+      title={Multi-Prototype Networks for Unconstrained Set-based Face Recognition},
+      author={Zhao, Jian and Li, Jianshu and Tu, Xiaoguang and Zhao, Fang and Xin, Yuan and Xing, Junliang and Liu, Hengzhu and Yan, Shuicheng and Feng, Jiashi},
+      booktitle={IJCAI},
+      year={2019}
+      }
 
-      @article{zhao2018look,
+
+      @inproceedings{zhao2019look,
       title={Look Across Elapse: Disentangled Representation Learning and Photorealistic Cross-Age Face Synthesis for Age-Invariant Face Recognition},
       author={Zhao, Jian and Cheng, Yu and Cheng, Yi and Yang, Yang and Lan, Haochong and Zhao, Fang and Xiong, Lin and Xu, Yan and Li, Jianshu and Pranata, Sugiri and others},
-      journal={AAAI},
+      booktitle={AAAI},
+      year={2019}
+      }
+      
+      
+      @article{tu2019joint,
+      title={Joint 3D Face Reconstruction and Dense Face Alignment from A Single Image with 2D-Assisted Self-Supervised Learning},
+      author={Tu, Xiaoguang and Zhao, Jian and Jiang, Zihang and Luo, Yao and Xie, Mei and Zhao, Yang and He, Linxiao and Ma, Zheng and Feng, Jiashi},
+      journal={arXiv preprint arXiv:1903.09359},
+      year={2019}
+      }
+      
+      
+      @article{tu2019learning,
+      title={Learning Generalizable and Identity-Discriminative Representations for Face Anti-Spoofing},
+      author={Tu, Xiaoguang and Zhao, Jian and Xie, Mei and Du, Guodong and Zhang, Hengsheng and Li, Jianshu and Ma, Zheng and Feng, Jiashi},
+      journal={arXiv preprint arXiv:1901.05602},
       year={2019}
       }
       
@@ -647,15 +704,6 @@ While not required, for optimal performance it is **highly** recommended to run 
       }
       
       
-      @inproceedings{zhao2017dual,
-      title={Dual-agent gans for photorealistic and identity preserving profile face synthesis},
-      author={Zhao, Jian and Xiong, Lin and Jayashree, Panasonic Karlekar and Li, Jianshu and Zhao, Fang and Wang, Zhecan and Pranata,           Panasonic Sugiri and Shen, Panasonic Shengmei and Yan, Shuicheng and Feng, Jiashi},
-      booktitle={NIPS},
-      pages={66--76},
-      year={2017}
-      }
-      
-      
       @inproceedings{zhao3d,
       title={3D-Aided Deep Pose-Invariant Face Recognition},
       author={Zhao, Jian and Xiong, Lin and Cheng, Yu and Cheng, Yi and Li, Jianshu and Zhou, Li and Xu, Yan and Karlekar, Jayashree and       Pranata, Sugiri and Shen, Shengmei and others},
@@ -663,12 +711,91 @@ While not required, for optimal performance it is **highly** recommended to run 
       pages={1184--1190},
       year={2018}
       }
-
-
+      
+      
+      @inproceedings{zhao2018dynamic,
+      title={Dynamic Conditional Networks for Few-Shot Learning},
+      author={Zhao, Fang and Zhao, Jian and Yan, Shuicheng and Feng, Jiashi},
+      booktitle={ECCV},
+      pages={19--35},
+      year={2018}
+      }
+      
+      
+      @inproceedings{zhao2017dual,
+      title={Dual-agent gans for photorealistic and identity preserving profile face synthesis},
+      author={Zhao, Jian and Xiong, Lin and Jayashree, Panasonic Karlekar and Li, Jianshu and Zhao, Fang and Wang, Zhecan and Pranata,           Panasonic Sugiri and Shen, Panasonic Shengmei and Yan, Shuicheng and Feng, Jiashi},
+      booktitle={NeurIPS},
+      pages={66--76},
+      year={2017}
+      }
+      
+      
+      @inproceedings{zhao122017marginalized,
+      title={Marginalized cnn: Learning deep invariant representations},
+      author={Zhao12, Jian and Li, Jianshu and Zhao, Fang and Yan13, Shuicheng and Feng, Jiashi},
+      booktitle={BMVC},
+      year={2017}
+      }
+      
+      
       @inproceedings{cheng2017know,
       title={Know you at one glance: A compact vector representation for low-shot learning},
       author={Cheng, Yu and Zhao, Jian and Wang, Zhecan and Xu, Yan and Jayashree, Karlekar and Shen, Shengmei and Feng, Jiashi},
       booktitle={ICCVW},
       pages={1924--1932},
       year={2017}
+      }
+      
+      
+      @inproceedings{xu2017high,
+      title={High performance large scale face recognition with multi-cognition softmax and feature retrieval},
+      author={Xu, Yan and Cheng, Yu and Zhao, Jian and Wang, Zhecan and Xiong, Lin and Jayashree, Karlekar and Tamura, Hajime and Kagaya, Tomoyuki and Shen, Shengmei and Pranata, Sugiri and others},
+      booktitle={ICCVW},
+      pages={1898--1906},
+      year={2017}
+      }
+      
+      
+      @inproceedings{wangconditional,
+      title={Conditional Dual-Agent GANs for Photorealistic and Annotation Preserving Image Synthesis},
+      author={Wang, Zhecan and Zhao, Jian and Cheng, Yu and Xiao, Shengtao and Li, Jianshu and Zhao, Fang and Feng, Jiashi and Kassim, Ashraf},
+      booktitle={BMVCW},
+      }
+      
+      
+      @inproceedings{li2017integrated,
+      title={Integrated face analytics networks through cross-dataset hybrid training},
+      author={Li, Jianshu and Xiao, Shengtao and Zhao, Fang and Zhao, Jian and Li, Jianan and Feng, Jiashi and Yan, Shuicheng and Sim, Terence},
+      booktitle={ACM MM},
+      pages={1531--1539},
+      year={2017}
+      }
+      
+      
+      @article{xiong2017good,
+      title={A good practice towards top performance of face recognition: Transferred deep feature fusion},
+      author={Xiong, Lin and Karlekar, Jayashree and Zhao, Jian and Cheng, Yi and Xu, Yan and Feng, Jiashi and Pranata, Sugiri and Shen, Shengmei},
+      journal={arXiv preprint arXiv:1704.00438},
+      year={2017}
+      }
+      
+      
+      @article{zhao2017robust,
+      title={Robust lstm-autoencoders for face de-occlusion in the wild},
+      author={Zhao, Fang and Feng, Jiashi and Zhao, Jian and Yang, Wenhan and Yan, Shuicheng},
+      journal={T-IP},
+      volume={27},
+      number={2},
+      pages={778--790},
+      year={2017}
+      }
+ 
+ 
+      @inproceedings{li2016robust,
+      title={Robust face recognition with deep multi-view representation learning},
+      author={Li, Jianshu and Zhao, Jian and Zhao, Fang and Liu, Hao and Li, Jing and Shen, Shengmei and Feng, Jiashi and Sim, Terence},
+      booktitle={ACM MM},
+      pages={1068--1072},
+      year={2016}
       }
